@@ -1,37 +1,35 @@
 import React from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { useStateMachine } from "little-state-machine";
 import { useRouter } from "next/router";
 import updateAction from "./updateAction";
 import { NextPage } from "next";
 
 
-const Step1:NextPage = (props) => {
+const Step2 :NextPage = (props) => {
   const { register, handleSubmit } = useForm();
   const { actions, state } = useStateMachine({ updateAction });
   const router = useRouter();
 
-  const onSubmit :SubmitHandler<FieldValues>= (data) => {
+  const onSubmit = (data:any) => {
     actions.updateAction(data);
-    router.push("./step2");
+    router.push("./result");
   };
-
-  console.log(state, "state");
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <h2>Step 1</h2>
+      <h2>Step 2</h2>
       <label>
-        First Name:
-        <input {...register("firstName")} defaultValue={state.data.firstName } />
+        Age:
+        <input {...register("age")} defaultValue={state.data.age} />
       </label>
       <label>
-        Last Name:
-        <input {...register("lastName")} defaultValue={state.data.lastName} />
+        Years of experience:
+        <input {...register("yearsOfExp")} defaultValue={state.data.yearsOfExp} />
       </label>
       <input type="submit" />
     </form>
   );
 };
 
-export default Step1;
+export default Step2;
