@@ -1,11 +1,10 @@
 import React from "react";
-import { useStateMachine } from "little-state-machine";
+import { GlobalState, useStateMachine } from "little-state-machine";
 import updateAction from "./updateAction";
 import { NextPage } from "next";
 
-const Result = (props) => {
-  const { state } = useStateMachine(updateAction);
-
+const Result:NextPage = (props) => {
+  const { state } = useStateMachine(updateAction as any);
   return (
     <>
       <h2>Result:</h2>
@@ -13,5 +12,4 @@ const Result = (props) => {
     </>
   );
 };
-
 export default Result;
