@@ -11,7 +11,7 @@ const Step1:NextPage = (props) => {
   const { actions, state } = useStateMachine({ updateAction });
   const router = useRouter();
 
-  const onSubmit :SubmitHandler<FieldValues>= (data) => {
+  const onSubmit= (data:any) => {
     actions.updateAction(data);
     router.push("./step2");
   };
@@ -23,11 +23,11 @@ const Step1:NextPage = (props) => {
       <h2>Step 1</h2>
       <label>
         First Name:
-        <input {...register("firstName")} defaultValue={state.data.firstName } />
+        <input {...register("firstName")} defaultValue={state.firstName } />
       </label>
       <label>
         Last Name:
-        <input {...register("lastName")} defaultValue={state.data.lastName} />
+        <input {...register("lastName")} defaultValue={state.lastName} />
       </label>
       <input type="submit" />
     </form>

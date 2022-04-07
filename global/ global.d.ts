@@ -8,8 +8,12 @@ export interface IFormData {
     yearsOfExp: string;
   }
 
+
 declare module 'little-state-machine' {
   interface GlobalState {
-    data: IFormData;
+    firstName: string;
+    lastName: string;
+    age: string;
+    yearsOfExp: string;
   }
 }

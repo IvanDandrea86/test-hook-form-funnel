@@ -5,12 +5,10 @@ import { AppProps } from "next/app";
 
 // createStore({})
 createStore({
-  data:{
-  firstName: "jet",
-  lastName: "lee",
-  age: "24",
-  yearsOfExp: "2022",
-  }
+  firstName: "",
+  lastName: "",
+  age: "",
+  yearsOfExp: "",
 });
 
 

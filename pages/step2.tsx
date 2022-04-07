@@ -21,11 +21,11 @@ const Step2 :NextPage = (props) => {
       <h2>Step 2</h2>
       <label>
         Age:
-        <input {...register("age")} defaultValue={state.data.age} />
+        <input {...register("age")} defaultValue={state.age} />
       </label>
       <label>
         Years of experience:
-        <input {...register("yearsOfExp")} defaultValue={state.data.yearsOfExp} />
+        <input {...register("yearsOfExp")} defaultValue={state.yearsOfExp} />
       </label>
       <input type="submit" />
     </form>
